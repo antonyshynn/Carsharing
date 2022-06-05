@@ -35,7 +35,7 @@ public class Car implements Serializable {
     private Double consumption;
     @Column(nullable = false)
     private Transmission transmission;
-    @Column
+    @Column(length = 1000)
     private String imageUrl;
     @Column(nullable = false)
     private Integer price;

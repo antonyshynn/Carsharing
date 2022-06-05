@@ -12,6 +12,8 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     Optional<Long> deleteCarById(Long id);
 
-    List<Car> findCarsByRoomId(Long id);
+    List<Car> findCarsByPurchaserId(Long id);
+
+    List<Car> findByBrandIgnoreCaseAndPriceIsLessThanAndYearIsGreaterThan(String brand, Integer price, Integer year);
 
 }

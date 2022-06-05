@@ -62,4 +62,12 @@ public class CarController {
         carService.deleteCar(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/search/{carBrand}/{price}/{year}")
+    @PreAuthorize("hasAuthority('user:read')")
+    public ResponseEntity<List<Car>> findCarByUserId(@PathVariable("carBrand") String carBrand, @PathVariable("price") Integer price,
+                                                     @PathVariable("year") Integer year) {
+        List<Car> carsByCriteria = carService.findCarsByCriteria(carBrand, price, year);
+        return new ResponseEntity<>(carsByCriteria, HttpStatus.OK);
+    }
 }

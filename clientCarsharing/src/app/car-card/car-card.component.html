@@ -1,0 +1,98 @@
+<ul class="featured-car-list">
+
+<li *ngFor="let car of cars | slice:0:6" >
+        <div class="featured-car-card">
+
+          <figure class="card-banner">
+            <img src="{{car.imageUrl}}" alt="Toyota RAV4 2021" loading="lazy" width="440" height="300"
+                 class="w-100">
+          </figure>
+
+          <div class="card-content">
+
+            <div class="card-title-wrapper">
+              <h3 class="h3 card-title">
+                <a href="#">{{car.brand + ' ' + car.model}}</a>
+              </h3>
+
+              <data class="year" value="2021">{{car.year}}</data>
+            </div>
+
+            <ul class="card-list">
+
+              <li class="card-list-item">
+                <ion-icon name="people-outline"></ion-icon>
+
+                <span class="card-item-text">{{car.capacity}} People</span>
+              </li>
+
+              <li class="card-list-item">
+                <ion-icon name="flash-outline"></ion-icon>
+
+                <span class="card-item-text">{{car.fuelType}}</span>
+              </li>
+
+              <li class="card-list-item">
+                <ion-icon name="speedometer-outline"></ion-icon>
+
+                <span class="card-item-text">{{car.consumption}} litres</span>
+              </li>
+
+              <li class="card-list-item">
+                <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                <span class="card-item-text">{{car.transmission}}</span>
+              </li>
+
+            </ul>
+
+            <div class="card-price-wrapper">
+
+              <p class="card-price">
+                <strong>${{car.price}}</strong> / month
+              </p>
+
+              <button class="btn1 fav-btn" aria-label="Add to favourite list">
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+
+              <button (click)="onOpenModal(car)" class="btn1 fav-btn">Rent now</button>
+<!--              <a *ngIf="computer.status === 'OK'" (click)="onOpenModal(computer)" class="btn btn-outline-danger mt-2">Report a problem</a>-->
+<!--              <a *ngIf="computer.status === 'BROKEN'" class="btn btn-outline-dark disabled mt-2">Report a problem</a>-->
+            </div>
+
+          </div>
+
+        </div>
+</li>
+</ul>
+
+
+        <!-- Edit Computer Message Modal -->
+        <div class="modal fade" id="updateReport" tabindex="-1" role="dialog" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateEmployeeModalLabel">Rent car {{editCar?.brand + ' ' + editCar?.model}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form #updateReport="ngForm" (ngSubmit)="onUpdateReport(message.value)">
+
+                  <div class="form-group">
+                    <label for="reportMessage">Want to rent this car? Leave us your contacts!</label>
+                    <textarea #message rows="6" ngModel="{{ editCar?.reportMessage }}" name="reportMessage" class="form-control" id="reportMessage" placeholder="Describe the situation" required autocomplete="off">
+            </textarea>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                    <button (click)="onUpdateReport(message.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>

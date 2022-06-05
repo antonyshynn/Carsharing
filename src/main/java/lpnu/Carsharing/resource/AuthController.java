@@ -2,7 +2,7 @@ package lpnu.Carsharing.resource;
 
 import lpnu.Carsharing.entity.UserEntity;
 import lpnu.Carsharing.entity.enums.UserRoles;
-import com.antonyshyn.accountingSystem.filter.JwtTokenProvider;
+import lpnu.Carsharing.filter.JwtTokenProvider;
 import lpnu.Carsharing.payload.request.LoginRequest;
 import lpnu.Carsharing.payload.request.SignupRequest;
 import lpnu.Carsharing.payload.response.JwtResponse;
@@ -59,7 +59,38 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser( @RequestBody SignupRequest signUpRequest) {
+    public ResponseEntity<?> registerUserBySignUp( @RequestBody SignupRequest signUpRequest) {
+        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new MessageResponse("Error: Username is already taken!"));
+        }
+
+        // Create new user's account
+        UserEntity user = new UserEntity(
+                signUpRequest.getUsername(),
+                encoder.encode(signUpRequest.getPassword()),
+                signUpRequest.getEmail(),
+                signUpRequest.getFirstName(),
+                signUpRequest.getLastName(),
+                UserRoles.USER
+        );
+
+/*        {
+                "username": "test",
+                "password": "123",
+                "email": "test@123",
+                "firstName": "Alan",
+                "lastName": "Po"
+        }*/
+
+        userRepository.save(user);
+
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @PostMapping("/createUser")
+    public ResponseEntity<?> registerUserByAdmin( @RequestBody SignupRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity
                     .badRequest()
@@ -82,6 +113,7 @@ public class AuthController {
                 "email": "test@123",
                 "firstName": "Alan",
                 "lastName": "Po"
+                "role": "ADMIN"
         }*/
 
         userRepository.save(user);

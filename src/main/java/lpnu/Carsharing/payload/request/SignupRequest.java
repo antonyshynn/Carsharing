@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 public class SignupRequest {
     private String username;
     private String password;
@@ -13,4 +13,13 @@ public class SignupRequest {
     private String firstName;
     private String lastName;
     private UserRoles role;
+
+    public SignupRequest(String username, String password, String email, String firstName, String lastName, UserRoles role) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+    }
 }

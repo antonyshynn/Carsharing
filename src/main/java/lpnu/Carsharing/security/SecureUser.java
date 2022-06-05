@@ -66,7 +66,7 @@ public class SecureUser implements UserDetails {
     public static SecureUser fromUser(UserEntity user) {
         return new SecureUser(
                 user.getUsername(), user.getPassword(),
-                user.getUserRole().getAuthorities(), true, user.getStudyRoomId());
+                user.getUserRole().getAuthorities(), true, user.getId());
     }
 
     public Long getId() {

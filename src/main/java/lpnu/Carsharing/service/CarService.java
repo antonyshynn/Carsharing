@@ -22,12 +22,16 @@ public class CarService {
                 .orElseThrow(() -> new CarNotFoundException("Computer was not found with id: " + id));
     }
 
+    public List<Car> findCarsByCriteria(String brand, Integer price, Integer year) {
+        return carRepository.findByBrandIgnoreCaseAndPriceIsLessThanAndYearIsGreaterThan(brand, price, year);
+    }
+
     public List<Car> findAllCars() {
         return carRepository.findAll();
     }
 
     public List<Car> findAllCarsByUserId(Long id) {
-        return carRepository.findCarsByRoomId(id);
+        return carRepository.findCarsByPurchaserId(id);
     }
 
     public Car addCar(Car car) {

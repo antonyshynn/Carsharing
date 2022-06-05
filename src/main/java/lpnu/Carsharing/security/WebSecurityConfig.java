@@ -1,6 +1,6 @@
 package lpnu.Carsharing.security;
 
-import com.antonyshyn.accountingSystem.filter.AuthFilter;
+import lpnu.Carsharing.filter.AuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
