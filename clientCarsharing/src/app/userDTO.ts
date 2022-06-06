@@ -1,11 +1,10 @@
-export interface UserEntity {
+export interface UserDTO {
   id: number;
   username: string;
-  password: string;
   email: string;
   firstName: string;
   lastName: string;
   address: string;
-  imageUrl: string;
-  role: string;
+  imageURL: string;
+  userRole: string;
 }

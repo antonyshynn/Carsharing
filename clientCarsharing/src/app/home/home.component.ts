@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     let token = sessionStorage.getItem('auth-user')
     if (token === null)
       return
-    if (token.includes('user:create'))
+    if (token.includes('user:write'))
       this.isAdmin = true;
   }
 

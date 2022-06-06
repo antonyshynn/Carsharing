@@ -19,6 +19,7 @@ import { SearchComponent } from './search/search.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FaqsComponent,
     FeedbackComponent,
     AboutUsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

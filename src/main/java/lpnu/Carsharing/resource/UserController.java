@@ -1,6 +1,7 @@
 package lpnu.Carsharing.resource;
 
 import lpnu.Carsharing.entity.UserEntity;
+import lpnu.Carsharing.entity.enums.UserDTO;
 import lpnu.Carsharing.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,5 +24,12 @@ public class UserController {
     public ResponseEntity<UserEntity> addUser(@RequestBody UserEntity user) {
         UserEntity newUser = userService.saveUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/findUser/{id}")
+    @PreAuthorize("hasAuthority('user:read')")
+    public ResponseEntity findUserDTOById(@PathVariable("id") Long id) {
+        UserDTO user2 = userService.findUserEntityById(id);
+        return new ResponseEntity<>(user2, HttpStatus.OK);
     }
 }

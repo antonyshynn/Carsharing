@@ -28,17 +28,23 @@ public class UserEntity implements Serializable {
     private String firstName;
     @Column
     private String lastName;
+    @Column
+    private String address;
+    @Column
+    private String imageURL;
 
     @Enumerated(EnumType.STRING)
     private UserRoles userRole;
 
 
-    public UserEntity(String username, String password, String email, String firstName, String lastName, UserRoles userRole) {
+    public UserEntity(String username, String password, String email, String firstName, String lastName, String address, String imageURL, UserRoles userRole) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.address = address;
+        this.imageURL = imageURL;
         this.userRole = userRole;
     }
 }

@@ -25,7 +25,7 @@
             <li class="card-list-item">
               <ion-icon name="people-outline"></ion-icon>
 
-              <span class="card-item-text">{{car1.capacity}} People</span>
+              <span class="card-item-text">{{car1.capacity}} Людини</span>
             </li>
 
             <li class="card-list-item">
@@ -37,7 +37,7 @@
             <li class="card-list-item">
               <ion-icon name="speedometer-outline"></ion-icon>
 
-              <span class="card-item-text">{{car1.consumption}} litres</span>
+              <span class="card-item-text">{{car1.consumption}} л/100км</span>
             </li>
 
             <li class="card-list-item">
@@ -51,14 +51,14 @@
           <div class="card-price-wrapper">
 
             <p class="card-price">
-              <strong>${{car1.price}}</strong> / month
+              <strong>${{car1.price}}</strong> / місяць
             </p>
 
             <button class="btn1 fav-btn" aria-label="Add to favourite list">
               <ion-icon name="heart-outline"></ion-icon>
             </button>
 
-            <button (click)="onOpenModal(car1)" class="btn1 fav-btn">Rent now</button>
+            <button (click)="onOpenModal(car1)" class="btn1 fav-btn">Орендувати</button>
             <!--              <a *ngIf="computer.status === 'OK'" (click)="onOpenModal(computer)" class="btn btn-outline-danger mt-2">Report a problem</a>-->
             <!--              <a *ngIf="computer.status === 'BROKEN'" class="btn btn-outline-dark disabled mt-2">Report a problem</a>-->
           </div>

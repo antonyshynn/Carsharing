@@ -25,7 +25,7 @@ public class CarController {
         System.out.println(id);
             List<Car> toys = carService.findAllCarsByUserId(id);
             return new ResponseEntity<>(toys, HttpStatus.OK);
-        }
+    }
 
     @GetMapping("/all")
     @PreAuthorize("hasAuthority('user:read')")

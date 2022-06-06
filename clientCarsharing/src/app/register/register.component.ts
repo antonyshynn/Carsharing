@@ -26,6 +26,8 @@ export class RegisterComponent implements OnInit {
     email: null,
     firstName: null,
     lastName: null,
+    address: null,
+    imageURL: null,
     role: null
   };
   isSuccessful = false;
@@ -59,13 +61,15 @@ export class RegisterComponent implements OnInit {
   }
 
   public onCreateUser(): void {
-      const {username, password, email, firstName, lastName} = this.form;
+      const {username, password, email, firstName, lastName, address, imageURL} = this.form;
       console.log(this.form);
       this.user.username = username;
       this.user.password = password;
       this.user.email = email;
       this.user.firstName = firstName;
       this.user.lastName = lastName;
+      this.user.address = address;
+      this.user.imageUrl = imageURL;
       this.user.role = 'ADMIN';
   }
 

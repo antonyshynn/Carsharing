@@ -83,8 +83,8 @@
 
                   <div class="form-group">
                     <label for="reportMessage">Бажаєте орендувати? Залиште нам свої контакти!</label>
-                    <textarea #message rows="6" ngModel="{{ editCar?.reportMessage }}" name="reportMessage" class="form-control" id="reportMessage" placeholder="Залиште ваші контакти" required autocomplete="off">
-            </textarea>
+                    <textarea #message [readOnly]="editCar?.status === 'RENTED'" rows="6" ngModel="{{ editCar?.reportMessage }}" name="reportMessage" class="form-control" id="reportMessage" placeholder="Вкажіть важі контакти" required autocomplete="off">
+                  </textarea>
                   </div>
 
                   <div class="modal-footer">

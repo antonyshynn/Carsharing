@@ -8,6 +8,7 @@ import {CarListComponent} from "./car-list/car-list.component";
 import {FaqsComponent} from "./faqs/faqs.component";
 import {FeedbackComponent} from "./feedback/feedback.component";
 import {AboutUsComponent} from "./about-us/about-us.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'faqs', component: FaqsComponent},
   { path: 'aboutUS', component: AboutUsComponent},
   { path: 'feedback', component: FeedbackComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

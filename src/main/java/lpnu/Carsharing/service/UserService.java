@@ -1,6 +1,7 @@
 package lpnu.Carsharing.service;
 
 import lpnu.Carsharing.entity.UserEntity;
+import lpnu.Carsharing.entity.enums.UserDTO;
 import lpnu.Carsharing.repo.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,8 +30,10 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public UserEntity findUserEntityByUsername(String username) {
-        UserEntity user = userRepo.findUserEntitiesByUsername(username).orElseThrow();
+    public UserDTO findUserEntityById(Long id) {
+        UserEntity userEntity = userRepo.findUserEntitiesById(id).orElseThrow();
+        UserDTO user = new UserDTO(userEntity.getId(), userEntity.getUsername(), userEntity.getEmail(), userEntity.getFirstName(), userEntity.getLastName(),
+                userEntity.getAddress(), userEntity.getImageURL(), userEntity.getUserRole());
         return user;
     }
 }

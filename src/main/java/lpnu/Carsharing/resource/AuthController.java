@@ -73,6 +73,8 @@ public class AuthController {
                 signUpRequest.getEmail(),
                 signUpRequest.getFirstName(),
                 signUpRequest.getLastName(),
+                signUpRequest.getAddress(),
+                signUpRequest.getImageURL(),
                 UserRoles.USER
         );
 
@@ -104,6 +106,8 @@ public class AuthController {
                 signUpRequest.getEmail(),
                 signUpRequest.getFirstName(),
                 signUpRequest.getLastName(),
+                signUpRequest.getAddress(),
+                signUpRequest.getImageURL(),
                 signUpRequest.getRole()
         );
 
