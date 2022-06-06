@@ -23,7 +23,7 @@
               <li class="card-list-item">
                 <ion-icon name="people-outline"></ion-icon>
 
-                <span class="card-item-text">{{car.capacity}} People</span>
+                <span class="card-item-text">{{car.capacity}} Людини</span>
               </li>
 
               <li class="card-list-item">
@@ -35,7 +35,7 @@
               <li class="card-list-item">
                 <ion-icon name="speedometer-outline"></ion-icon>
 
-                <span class="card-item-text">{{car.consumption}} litres</span>
+                <span class="card-item-text">{{car.consumption}} л/100км</span>
               </li>
 
               <li class="card-list-item">
@@ -49,14 +49,14 @@
             <div class="card-price-wrapper">
 
               <p class="card-price">
-                <strong>${{car.price}}</strong> / month
+                <strong>${{car.price}}</strong> / місяць
               </p>
 
               <button class="btn1 fav-btn" aria-label="Add to favourite list">
                 <ion-icon name="heart-outline"></ion-icon>
               </button>
 
-              <button (click)="onOpenModal(car)" class="btn1 fav-btn">Rent now</button>
+              <button (click)="onOpenModal(car)" class="btn1 fav-btn">Орендувати</button>
 <!--              <a *ngIf="computer.status === 'OK'" (click)="onOpenModal(computer)" class="btn btn-outline-danger mt-2">Report a problem</a>-->
 <!--              <a *ngIf="computer.status === 'BROKEN'" class="btn btn-outline-dark disabled mt-2">Report a problem</a>-->
             </div>
@@ -73,7 +73,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="updateEmployeeModalLabel">Rent car {{editCar?.brand + ' ' + editCar?.model}}</h5>
+                <h5 class="modal-title" id="updateEmployeeModalLabel">Бажаєте орендувати {{editCar?.brand + ' ' + editCar?.model}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true"></span>
                 </button>
@@ -82,8 +82,8 @@
                 <form #updateReport="ngForm" (ngSubmit)="onUpdateReport(message.value)">
 
                   <div class="form-group">
-                    <label for="reportMessage">Want to rent this car? Leave us your contacts!</label>
-                    <textarea #message rows="6" ngModel="{{ editCar?.reportMessage }}" name="reportMessage" class="form-control" id="reportMessage" placeholder="Describe the situation" required autocomplete="off">
+                    <label for="reportMessage">Бажаєте орендувати? Залиште нам свої контакти!</label>
+                    <textarea #message rows="6" ngModel="{{ editCar?.reportMessage }}" name="reportMessage" class="form-control" id="reportMessage" placeholder="Залиште ваші контакти" required autocomplete="off">
             </textarea>
                   </div>
 

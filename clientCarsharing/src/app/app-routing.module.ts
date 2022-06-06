@@ -5,6 +5,9 @@ import {RegisterComponent} from "./register/register.component";
 import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
 import {HomeComponent} from "./home/home.component";
 import {CarListComponent} from "./car-list/car-list.component";
+import {FaqsComponent} from "./faqs/faqs.component";
+import {FeedbackComponent} from "./feedback/feedback.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
 
 
 const routes: Routes = [
@@ -13,6 +16,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'admin', component: AdminPanelComponent},
   { path: 'carList', component: CarListComponent},
+  { path: 'faqs', component: FaqsComponent},
+  { path: 'aboutUS', component: AboutUsComponent},
+  { path: 'feedback', component: FeedbackComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

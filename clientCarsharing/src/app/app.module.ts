@@ -16,6 +16,9 @@ import { CarCardComponent } from './car-card/car-card.component';
 import { CarListComponent } from './car-list/car-list.component';
 import {RouterModule} from "@angular/router";
 import { SearchComponent } from './search/search.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { SearchComponent } from './search/search.component';
     CarCardComponent,
     CarListComponent,
     SearchComponent,
+    FaqsComponent,
+    FeedbackComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

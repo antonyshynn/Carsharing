@@ -1,0 +1,567 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+<header class="header" data-header>
+  <div class="container">
+
+    <div class="overlay" data-overlay></div>
+
+    <a href="http://localhost:4200/home" class="logo">
+      <img src="../../assets/images/logo.svg" alt="Ridex logo">
+    </a>
+
+    <nav class="navbar" data-navbar>
+      <ul class="navbar-list">
+
+        <li>
+          <a href="http://localhost:4200/home" class="navbar-link" data-nav-link>Головна</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/aboutUS" class="navbar-link" data-nav-link>Про нас</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/feedback" class="navbar-link" data-nav-link>Відгуки</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/faqs"  class="navbar-link" data-nav-link>FAQS</a>
+        </li>
+        <li>
+          <a *ngIf="isAdmin" class="navbar-link" href="http://localhost:4200/admin">Адмін Панель</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+
+      <div class="header-contact">
+        <a href="tel:88002345678" class="contact-link">+38(050)223-45-66</a>
+
+        <span class="contact-time">Понеділок - Субота: 9:00 am - 6:00 pm</span>
+      </div>
+
+      <a class="btn" aria-labelledby="aria-label-txt">
+        <ion-icon name="car-outline"></ion-icon>
+
+        <span [routerLink]="['/carList']" id="aria-label-txt">Шукати транспортний засіб</span>
+      </a>
+
+      <a href="#" class="btn user-btn" aria-label="Profile">
+        <ion-icon name="person-outline"></ion-icon>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one">123</span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<main>
+  <section class="section mt-5" id="home">
+    <div class="container">
+
+      <div class="text-center">
+        <h2 class="h1 ">Frequently asked questions</h2>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <div class="container mt-5 mb-5 col-md-6">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="text-center mb-5 h1">
+        <h2>Що таке Ridex?</h2>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Що таке послуга Ridex?
+          </button>
+        </h4>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+             data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Каршерінг – дуже зручний і простий прокат автомобіля. Без офісів,
+            менеджерів, паперових актів видачі/прийому автомобіля, оплати в касу, величезних застав,
+            повернення автомобіля строго в офісі, в робочий час та інші тяганини. Це прокат машини через
+            програму. Відкривай, закривай машину через програму Ridex. У ціну включені паркування у
+            місті, паливо, страховки, шини по сезону та багато іншого.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Чим ви краще таксі?
+          </button>
+        </h4>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+             data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Кожен вибирає, що йому вигідно. Це зручно та просто. Простіше ніж
+            орендувати автомобіль десь. Наш сервіс допоможе, якщо:
+            <ul>
+              <li>Потрібен автомобіль з точки А в точку В</li>
+              <li>Поїздити у справах</li>
+              <li>Потрібен другий автомобіль у сім'ю не постійно, а періодично</li>
+              <li>Поламався свій автомобіль</li>
+              <li>Чекаєш автомобіль, який замовив у США або в автосалоні</li>
+              <li>Тобі більше не потрібний автомобіль. Його утримувати та втрачати на різниці в ціні,
+                дорожче,
+                ніж
+                використовувати каршеринг.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree" aria-expanded="false"
+                  aria-controls="flush-collapseThree">
+            Я можу взяти машину в одному районі, а повернути до іншого?
+          </button>
+        </h4>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+             data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Так звичайно. Вибирай автомобіль, якщо у твоєму районі є зона завершення
+            поїздок, ти зможеш закінчити там оренду.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFour" aria-expanded="false"
+                  aria-controls="flush-collapseFour">
+            Я можу переглянути сервіс без реєстрації в сервісі?
+          </button>
+        </h4>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+             data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Звісно! Відкривши сайт, ти бачиш автомобілі, можеш
+            читати договір, правила та FAQ. Якщо захочеш використовувати сервіс, користуватися іншими
+            функціями, потрібно реєструватися.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion accordion-flush" id="accordionFlushTwo">
+      <div class="text-center mt-5 mb-5 h1">
+        <h2>Почати користуватися Ridex</h2>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushTwo-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushTwo-collapseOne" aria-expanded="false"
+                  aria-controls="flushTwo-collapseOne">
+            Хто може бути клієнтом сервісу?
+          </button>
+        </h4>
+        <div id="flushTwo-collapseOne" class="accordion-collapse collapse" aria-labelledby="flushTwo-headingOne"
+             data-bs-parent="#accordionFlushTwo">
+          <div class="accordion-body">Будь-яка людина, яка досягла віку 21 року зі стажем водіння від 2-х
+            років (дата видачі водійського, або дата, зазначена у твоєму водійському біля категорії В).
+            Сервісом можуть користуватися громадяни України, іноземці та особи без громадянства.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushTwo-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushTwo-collapseTwo" aria-expanded="false"
+                  aria-controls="flushTwo-collapseTwo">
+            Як почати користуватися каршерингом?
+          </button>
+        </h4>
+        <div id="flushTwo-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flushTwo-headingTwo"
+             data-bs-parent="#accordionFlushTwo">
+          <div class="accordion-body">Зайти на вебсайт за допомогою буд-якого веббраузеру та пройти
+            реєстрацію на сайті.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushTwo-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushTwo-collapseThree" aria-expanded="false"
+                  aria-controls="flushTwo-collapseThree">
+            Які документи потрібні для реєстрації в сервісі?
+          </button>
+        </h4>
+        <div id="flushTwo-collapseThree" class="accordion-collapse collapse"
+             aria-labelledby="flushTwo-headingThree"
+             data-bs-parent="#accordionFlushTwo">
+          <div class="accordion-body">
+            Необхідно зробити фото документів, які запитує програму, а саме:
+            <br>
+            <ol>
+              <li>Фото сторінки паспорта з фотографією (1 фото). <br>
+                <i>Якщо ID картка</i> – лицьова сторона картки. <br>
+                <i>Якщо іноземець</i> – перша сторінка паспорта, з яким заїхав до країни, або вид на
+                постійне чи тимчасове проживання в Україні, якщо таке було отримано.
+              </li>
+              <li>Фото сторінки паспорта з місцем реєстрації (прописки) <br>
+                <i>Якщо ID карта</i> – виписка з реєстру (зазвичай роздрукована на папері А4). <br>
+                <i>Якщо іноземець</i> – фото візи або позначки прикордонної служби з датою про в'їзд в
+                Україну, або адресу, зазначену в документі на постійне чи тимчасове проживання в
+                Україні, якщо таке було отримано.
+              </li>
+              <li>Лицьова сторона водійського.</li>
+              <li>Зворотний бік водія.</li>
+              <li>Твоє селфі з посвідченням водія.</li>
+            </ol>
+            На жаль, додати водійське через сервіс «ДІЯ» неможливо, адже шеринг документів водія поки не
+            реалізований в додатку «ДІЯ».
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushTwo-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushTwo-collapseFour" aria-expanded="false"
+                  aria-controls="flushTwo-collapseFour">
+            Хто може використовувати мій обліковий запис?
+          </button>
+        </h4>
+        <div id="flushTwo-collapseFour" class="accordion-collapse collapse"
+             aria-labelledby="flushTwo-headingFour"
+             data-bs-parent="#accordionFlushTwo">
+          <div class="accordion-body">Ваш обліковий запис є підтвердженням вашої особи, наявності водійського
+            та належного стажу водіння, тому його можете використовувати тільки ви самі. З метою безпеки не
+            можна передавати право керування автомобілем та використання акаунта іншим особам, у тому числі
+            батькам, родичам, чоловікові або дружині, дітям. Передача прав керування автомобілем третім
+            особам вважається суворим порушенням правил сервісу та передбачає накладення штрафних санкцій.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushTwo-headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushTwo-collapseFive" aria-expanded="false"
+                  aria-controls="flushTwo-collapseFive">
+            У мене немає документів, чи можна їх додати пізніше?
+          </button>
+        </h4>
+        <div id="flushTwo-collapseFive" class="accordion-collapse collapse"
+             aria-labelledby="flushTwo-headingFive"
+             data-bs-parent="#accordionFlushTwo">
+          <div class="accordion-body">Можеш розпочати реєстрацію, а потім додати фото документа, якого не
+            вистачає на момент реєстрації. До моменту додавання всіх документів використання автомобіля
+            неможливо.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushTwo-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushTwo-collapseSix" aria-expanded="false"
+                  aria-controls="flushTwo-collapseSix">
+            Коли я зможу поїхати?
+          </button>
+        </h4>
+        <div id="flushTwo-collapseSix" class="accordion-collapse collapse"
+             aria-labelledby="flushTwo-headingSix"
+             data-bs-parent="#accordionFlushTwo">
+          <div class="accordion-body">Зареєструвався? Додай банківську картку для оплати послуг каршерингу.
+
+            Модерація відкриє доступ до поїздок якнайшвидше. Максимальний термін схвалення облікового запису
+            48 годин з моменту реєстрації та надання документів.
+            <br/> <br/>
+            Якщо не вистачає даних, або ми не змогли прочитати твої документи на фото, та потрібна додаткова
+            інформація, ми надішлемо тобі лист на email або повідомимо на сервісі Ridex. Допоможи нам
+            швидше схвалити акаунт – надсилай необхідні документи у відповідь на лист або додай їх у додаток
+            (Може знадобитися повторне фото або фото в іншій якості – без відблисків, засвітів, чіткіше).
+            <br/> <br/>
+            Після завершення модерації тобі одразу прийде лист на email та push-повідомлення у вебдодаток
+            Ridex про можливість користуватися послугами оренди.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion accordion-flush" id="accordionFlushThree">
+      <div class="text-center mt-5 mb-5 h1">
+        <h2>Додаткові питання</h2>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushThree-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushThree-collapseOne" aria-expanded="false"
+                  aria-controls="flushThree-collapseOne">
+            Які колеса встановлені на автомобілях?
+          </button>
+        </h4>
+        <div id="flushThree-collapseOne" class="accordion-collapse collapse"
+             aria-labelledby="flushThree-headingOne"
+             data-bs-parent="#accordionFlushThree">
+          <div class="accordion-body">Гума встановлена відповідно до сезону.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushThree-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushThree-collapseTwo" aria-expanded="false"
+                  aria-controls="flushThree-collapseTwo">
+            У вас є договір?
+          </button>
+        </h4>
+        <div id="flushThree-collapseTwo" class="accordion-collapse collapse"
+             aria-labelledby="flushThree-headingTwo"
+             data-bs-parent="#accordionFlushThree">
+          <div class="accordion-body">У нас є договір оферти, він є електронним. На
+            сайті є активне посилання для ознайомлення з договором та всіма його версіями.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushThree-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushThree-collapseThree" aria-expanded="false"
+                  aria-controls="flushThree-collapseThree">
+            Чи можна перевозити тварин чи великогабаритні вантажі?
+          </button>
+        </h4>
+        <div id="flushThree-collapseThree" class="accordion-collapse collapse"
+             aria-labelledby="flushThree-headingThree"
+             data-bs-parent="#accordionFlushThree">
+          <div class="accordion-body">
+            Перевезення габаритних вантажів та тварин заборонено.
+            <br/><br/>
+            Однак ми раді вашим маленьким друзям. Розуміємо, що хочеться кататися з ними. Якщо ви гарантуєте
+            чистоту салону та вбережете його від подряпин та слідів тварин, ми не будемо застосовувати
+            жодних санкцій за таку поїздку.
+            <br/><br/>
+            Давайте берегти чистоту та поважати інших користувачів!
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushThree-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushThree-collapseFour" aria-expanded="false"
+                  aria-controls="flushThree-collapseFour">
+            Чи можна курити в автомобілі?
+          </button>
+        </h4>
+        <div id="flushThree-collapseFour" class="accordion-collapse collapse"
+             aria-labelledby="flushThree-headingFour"
+             data-bs-parent="#accordionFlushThree">
+          <div class="accordion-body">Ні, це грубе порушення, яке передбачає накладення штрафу. Куріння
+            заборонено у тому числі електронних сигарет та IQ-OS. Докладніше про куріння в каршеринговому
+            автомобілі можна дізнатися у статті.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushThree-headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushThree-collapseFive" aria-expanded="false"
+                  aria-controls="flushThree-collapseFive">
+            Автомобіль зламався, що робити?
+          </button>
+        </h4>
+        <div id="flushThree-collapseFive" class="accordion-collapse collapse"
+             aria-labelledby="flushThree-headingFive"
+             data-bs-parent="#accordionFlushThree">
+          <div class="accordion-body">Зупинися, увімкни сигнал аварійної зупинки та зв'яжися зі Службою
+            підтримки, дотримуючись підказок оператора.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="flushThree-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flushThree-collapseSix" aria-expanded="false"
+                  aria-controls="flushThree-collapseSix">
+            Як продовжити користування автомобілем після завершення оренди?
+          </button>
+        </h4>
+        <div id="flushThree-collapseSix" class="accordion-collapse collapse"
+             aria-labelledby="flushThree-headingSix"
+             data-bs-parent="#accordionFlushThree">
+          <div class="accordion-body">Якщо ти завершив подорож, машина стала доступна для всіх. Хочеш знову
+            їхати? Натисніть кнопку бронювання та/або початку поїздки.
+            Якщо ти приїхав і хочеш поїхати на машині, щоб її не забрали сусіди, скористайся режимом
+            «Очікування», машина не буде доступна іншим користувачам, а ти зможеш почати поїздку тоді, коли
+            тобі необхідно.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" alt="">
+        </a>
+
+        <p class="footer-text">
+          Шукайте дешеві транспортні засоби у Нью-Йорку. З величезним вибором з понад 19,000 транспортних засобів,
+          Waydex пропонує its
+          нашим клієнтам
+          привабливий та веселий вибір.
+        </p>
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Компанія</p>
+        </li>
+
+        <li>
+          <a href="about-us.html" class="footer-link">Про нас</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Тарифні плани</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Наш блог</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Контакти</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Допомога</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Центр допомоги</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Запитати</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Політика конфіденційності</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Правила та умови</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Neighborhoods in New York</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Manhattan</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Central New York City</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Upper East Side</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Queens</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Theater District</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Midtown</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">SoHo</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Chelsea</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <ul class="social-list">
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-skype"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+        &copy; 2022 <a href="#">copyright</a>.
+      </p>
+
+    </div>
+
+  </div>
+</footer>

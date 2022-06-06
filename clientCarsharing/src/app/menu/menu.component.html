@@ -1,7 +1,7 @@
 <div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a href="/home" class="navbar-brand" style="color:white;" (click)="navToHome()">Carsharing</a>
+    <a href="/home" class="navbar-brand" style="color:white;" (click)="navToHome()">DavidychRent</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,10 +10,10 @@
       </ul>
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
         <li class="nav-item">
-          <a class="nav-link" (click)="navToRegister()">Sign Up</a>
+          <a class="nav-link" (click)="navToRegister()">Зареєструватись</a>
         </li>
         <li class="nav-item">
-          <a  class="nav-link" (click)="navToLogin()">Login</a>
+          <a  class="nav-link" (click)="navToLogin()">Авторизуватись</a>
         </li>
 
       </ul>
@@ -25,7 +25,7 @@
           <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
         </li>
         <li class="nav-item">
-          <a href class="nav-link" (click)="logout()">LogOut</a>
+          <a href class="nav-link" (click)="logout()">Вийти</a>
         </li>
       </ul>
 

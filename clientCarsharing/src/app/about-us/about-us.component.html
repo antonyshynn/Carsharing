@@ -1,0 +1,282 @@
+<header class="header" data-header>
+  <div class="container">
+
+    <div class="overlay" data-overlay></div>
+
+    <a href="http://localhost:4200/home" class="logo">
+      <img src="../../assets/images/logo.svg" alt="Ridex logo">
+    </a>
+
+    <nav class="navbar" data-navbar>
+      <ul class="navbar-list">
+
+        <li>
+          <a href="http://localhost:4200/home" class="navbar-link" data-nav-link>Головна</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/aboutUS" class="navbar-link" data-nav-link>Про нас</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/feedback" class="navbar-link" data-nav-link>Відгуки</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/faqs"  class="navbar-link" data-nav-link>FAQS</a>
+        </li>
+        <li>
+          <a *ngIf="isAdmin" class="navbar-link" href="http://localhost:4200/admin">Адмін Панель</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+
+      <div class="header-contact">
+        <a href="tel:88002345678" class="contact-link">+38(050)223-45-66</a>
+
+        <span class="contact-time">Понеділок - Субота: 9:00 am - 6:00 pm</span>
+      </div>
+
+      <a class="btn" aria-labelledby="aria-label-txt">
+        <ion-icon name="car-outline"></ion-icon>
+
+        <span [routerLink]="['/carList']" id="aria-label-txt">Шукати транспортний засіб</span>
+      </a>
+
+      <a href="#" class="btn user-btn" aria-label="Profile">
+        <ion-icon name="person-outline"></ion-icon>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one">123</span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+
+    </div>
+
+  </div>
+</header>>
+
+<div class="container" style="padding-top: 100px; padding-left: 10%; padding-right: 10%;">
+
+  <h1 style="margin-left: 40%; margin-right: auto;">Наша мета</h1>
+  <p style= "padding-top: 20px">Ми хочемо зробити процес оренди авто легким та приємним, як ніколи.
+    Ми бажаємо, щоб наші клієнти мали можливість замовити авто, про яке вони дуже давно мріяли</p>
+
+  <div class="sec grey-bg">
+    <div class="contain">
+      <div class="about-info-top">
+        <!-- <img src="/images/about/about-achievement.svg" alt="icon"> -->
+        <h1 style="margin: auto;">
+          Наші цінності </h1>
+      </div>
+      <div class="about-info-flex-col">
+        <div class="about-info-achievement">
+          <!-- <img src="/images/about/robot.png" class="about-info-smile" alt="icon"> -->
+          <div class="about-info-achievement-text">
+            <p style="font-weight: bold;">
+              Інноваційність </p>
+            Ми створюємо новітні аналітичні інструменти першими в Україні. </div>
+        </div>
+        <div class="about-info-achievement">
+          <!-- <img src="/images/about/cowboy.png" class="about-info-smile" alt="icon"> -->
+          <div class="about-info-achievement-text">
+            <p style="font-weight: bold;">
+              Креативність </p>
+            Творчо підходимо до роботи з даними, щоби створювати зручні та зрозумілі інструменти. </div>
+        </div>
+        <div class="about-info-achievement">
+          <!-- <img src="/images/about/handsmile.png" class="about-info-smile" alt="icon"> -->
+          <div class="about-info-achievement-text">
+            <p style="font-weight: bold;">
+              Відкритість </p>
+            Робимо суспільно важливу інформацію доступною як для громадського сектору,
+            так і для бізнесу та держорганів. </div>
+        </div>
+        <div class="about-info-achievement">
+          <!-- <img src="/images/about/cool.png" class="about-info-smile" alt="icon"> -->
+          <div class="about-info-achievement-text">
+            <p style="font-weight: bold;">
+              Відповідальність </p>
+            Робимо якісний продукт, враховуючи провідні міжнародні практики та рекомендації державних органів. </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1 style="margin-left: 30%; margin-right: auto;">Наша спадщина та цінності</h1>
+  <p style="padding-bottom: 100px; padding-top: 20px">Компанія Ridex — це лідер серед постачальників технологій,
+    яку було засновано в Україні у 2022 році. Ми прагнемо допомогти людям
+    переосмислити навколишній світ і розсунути межі можливого.
+
+    Штат нашої компанії наразі нараховує понад 100 працівники.
+  </p>
+
+</div>
+
+<!--
+  - #FOOTER
+-->
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" alt="">
+        </a>
+
+        <p class="footer-text">
+          Шукайте дешеві транспортні засоби у Нью-Йорку. З величезним вибором з понад 19,000 транспортних засобів,
+          Waydex пропонує its
+          нашим клієнтам
+          привабливий та веселий вибір.
+        </p>
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Компанія</p>
+        </li>
+
+        <li>
+          <a href="about-us.html" class="footer-link">Про нас</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Тарифні плани</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Наш блог</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Контакти</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Допомога</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Центр допомоги</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Запитати</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Політика конфіденційності</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Правила та умови</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Neighborhoods in New York</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Manhattan</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Central New York City</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Upper East Side</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Queens</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Theater District</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Midtown</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">SoHo</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Chelsea</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <ul class="social-list">
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-skype"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+        &copy; 2022 <a href="#">copyright</a>.
+      </p>
+
+    </div>
+
+  </div>
+</footer>

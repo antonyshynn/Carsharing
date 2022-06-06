@@ -11,13 +11,18 @@ import {TokenStorageService} from "../services/token-storage.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isAdmin = true;
+  isAdmin = false;
   cars!: Car[];
 
   constructor(private carService: CarService, private userService: UserService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.getCars();
+    let token = sessionStorage.getItem('auth-user')
+    if (token === null)
+      return
+    if (token.includes('user:create'))
+      this.isAdmin = true;
   }
 
   public getCars(): void {

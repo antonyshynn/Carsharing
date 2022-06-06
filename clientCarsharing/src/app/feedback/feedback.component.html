@@ -1,0 +1,341 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+      rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<header class="header" data-header>
+  <div class="container">
+
+    <div class="overlay" data-overlay></div>
+
+    <a href="http://localhost:4200/home" class="logo">
+      <img src="../../assets/images/logo.svg" alt="Ridex logo">
+    </a>
+
+    <nav class="navbar" data-navbar>
+      <ul class="navbar-list">
+
+        <li>
+          <a href="http://localhost:4200/home" class="navbar-link" data-nav-link>Головна</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/aboutUS" class="navbar-link" data-nav-link>Про нас</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/feedback" class="navbar-link" data-nav-link>Відгуки</a>
+        </li>
+
+        <li>
+          <a href="http://localhost:4200/faqs"  class="navbar-link" data-nav-link>FAQS</a>
+        </li>
+        <li>
+          <a *ngIf="isAdmin" class="navbar-link" href="http://localhost:4200/admin">Адмін Панель</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+
+      <div class="header-contact">
+        <a href="tel:88002345678" class="contact-link">+38(050)223-45-66</a>
+
+        <span class="contact-time">Понеділок - Субота: 9:00 am - 6:00 pm</span>
+      </div>
+
+      <a class="btn" aria-labelledby="aria-label-txt">
+        <ion-icon name="car-outline"></ion-icon>
+
+        <span [routerLink]="['/carList']" id="aria-label-txt">Шукати транспортний засіб</span>
+      </a>
+
+      <a href="#" class="btn user-btn" aria-label="Profile">
+        <ion-icon name="person-outline"></ion-icon>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <span class="one">123</span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<main>
+  <section class="section mt-5" id="home">
+    <div class="container">
+
+      <div class="text-center">
+        <h2 class="h1 ">Testimonials</h2>
+      </div>
+    </div>
+  </section>
+  <div class="container mb-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col-sm-4">
+        <div class="card h-100 p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+            </div>
+            <div class="ms-4">
+              <p class="mb-1">Брали напрокат автомобіль, щоб подорожувати мінімально містом, тому що
+                самі
+                приїжджали на відпочинок, екскурсії не любимо, а ходити ліньки)) Дуже добрий сервіс,
+                оформили все без запитань. Машина в чистому стані,
+                доглянута, без пошкоджень чи поломок.
+                Відслужила на користь) Дякуємо!</p>
+              <div class=" small text-muted">- Олеся, Одеса</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100  p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+            </div>
+            <div class="ms-4">
+              <p class="mb-1">Скористався послугами компанії. Все на найвищому рівні. Машина в ідеальному
+                стані, менеджер при прийманні машини і при поверненні дуже кваліфікований і вічливий.
+                Все сподобалось, дякую за чудовий сервіс!</p>
+              <div class="small text-muted">- Роман, Львів</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100  p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+            </div>
+            <div class="ms-4">
+              <p class="mb-1">Дякую за відмінний сервіс)
+                Дуже задоволена машиною та прокатом загалом.
+                Приїхала з Києва і терміново була потрібна машина, все зробили швидко, менеджер
+                привітний і відповів на всі запитання.
+                Дякую, буду ще звертатися 😊</p>
+              <div class="small text-muted">- Марія, Львів</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100  p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+            </div>
+            <div class="ms-4">
+              <p class="mb-1">Приїхали відпочивати всією сім'єю, взяли напрокат машину, щоб ні від кого не
+                залежати та самостійно проїхати якнайбільше цікавих місць. Прокат спрацював добре і
+                ми отримали автомобіль швидко, враховані були всі наші побажання. Оформлення
+                всіх формальностей не зайняло багато часу. Автомобіль нам виділили справді якісний.</p>
+              <div class="small text-muted">- Христина, Київ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100  p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+            </div>
+            <div class="ms-4">
+              <p class="mb-1">Якось навіть не очікував, що вдасться настільки просто і швидко оформити
+                прокат автомобіля тут, дійсно з цим не було жодних проблем, я задоволений. Машину
+                доставили до мене, я вибрав модель Skoda Fabia. Все-таки компанія розумна, відчувається
+                висока якість обслуговування та лояльне ставлення до клієнтів. Ще сюди звертатимуся, це
+                точно.</p>
+              <div class="small text-muted">- Андрій, Суми</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card h-100  p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+            </div>
+            <div class="ms-4">
+              <p class="mb-1">Кілька разів звертався до Ridex з приводу оренди автомобіля. Іноді
+                хочеться відпочити всією сім'єю і покататися кудись. Оскільки свого автомобіля ми поки
+                що не має, цей сервіс чудово рятує в цьому плані. Зазвичай беру автомобіль на 2 дні у
+                вихідні. Ціни за прокат цілком прийнятні та транспорт належної якості. Послугами сервісу
+                задоволені.</p>
+              <div class="small text-muted">- Руслан, Харків</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!--
+  - #FOOTER
+-->
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo.svg" alt="">
+        </a>
+
+        <p class="footer-text">
+          Шукайте дешеві транспортні засоби у Нью-Йорку. З величезним вибором з понад 19,000 транспортних засобів,
+          Waydex пропонує its
+          нашим клієнтам
+          привабливий та веселий вибір.
+        </p>
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Компанія</p>
+        </li>
+
+        <li>
+          <a href="about-us.html" class="footer-link">Про нас</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Тарифні плани</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Наш блог</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Контакти</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Допомога</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Центр допомоги</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Запитати</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Політика конфіденційності</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Правила та умови</a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="footer-list-title">Neighborhoods in New York</p>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Manhattan</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Central New York City</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Upper East Side</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Queens</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Theater District</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Midtown</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">SoHo</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Chelsea</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <ul class="social-list">
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="logo-skype"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="social-link">
+            <ion-icon name="mail-outline"></ion-icon>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+        &copy; 2022 <a href="#">copyright</a>.
+      </p>
+
+    </div>
+
+  </div>
+</footer>
